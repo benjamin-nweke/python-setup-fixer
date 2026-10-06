@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "project_id": "6ed8e6c0c64b824c4723e5f22f493fc05ec384851554f62ec28334c696ce004e",
+  "created_at": "2026-10-03T02:48:48.674657+00:00",
+  "project": "missing-package",
+  "interpreter": "[HOME]/Documents/Codex/2026-10-03/i-x20/work/repair-demo-env/bin/python",
+  "python": "3.12.14",
+  "findings": [
+    {
+      "status": "pass",
+      "title": "Python environment",
+      "evidence": "Python 3.12.14; interpreter [HOME]/Documents/Codex/2026-10-03/i-x20/work/repair-demo-env/bin/python",
+      "action": "Selected project environment."
+    },
+    {
+      "status": "note",
+      "title": "Python version not declared",
+      "evidence": "No supported Python version constraint found.",
+      "action": "Declare requires-python in pyproject.toml to make compatibility checkable."
+    },
+    {
+      "status": "fail",
+      "title": "Dependency: rich",
+      "evidence": "Distribution is absent from the selected environment.",
+      "action": "Review the dependencies, then from the project directory run: [HOME]/Documents/Codex/2026-10-03/i-x20/work/repair-demo-env/bin/python -m pip install -r requirements.txt. Recheck afterward."
+    },
+    {
+      "status": "note",
+      "title": "Configuration requirements unknown",
+      "evidence": "No example variable names or recognized os environment lookups found.",
+      "action": "Dynamic lookups and settings frameworks are not inspected."
+    },
+    {
+      "status": "note",
+      "title": "Static inspection scope",
+      "evidence": "Inspected 1 Python files using Python 3.9.6.",
+      "action": "No project code was executed during static checks. Passing checks do not prove the application runs."
+    }
+  ],
+  "verification": {
+    "command": "[HOME]/Documents/Codex/2026-10-03/i-x20/work/repair-demo-env/bin/python app.py",
+    "exit_code": 1,
+    "timed_out": false,
+    "output": "Traceback (most recent call last):\n  File \"[PROJECT]/app.py\", line 1, in <module>\n    from rich.table import Table\nModuleNotFoundError: No module named 'rich'\n",
+    "output_truncated": false,
+    "result": "command failed"
+  }
+}

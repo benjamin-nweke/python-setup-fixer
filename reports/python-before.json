@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "project_id": "0e8a18a18361c6a22d164f015265f219297c36b7c5e3ec37f58249c39879300b",
+  "created_at": "2026-10-03T02:48:48.796445+00:00",
+  "project": "wrong-python",
+  "interpreter": "/Library/Developer/CommandLineTools/usr/bin/python3",
+  "python": "3.9.6",
+  "findings": [
+    {
+      "status": "note",
+      "title": "Python environment",
+      "evidence": "Python 3.9.6; interpreter /Library/Developer/CommandLineTools/usr/bin/python3",
+      "action": "No virtual environment selected. Create .venv or select one with --python."
+    },
+    {
+      "status": "fail",
+      "title": "Python version",
+      "evidence": "Project requires >=3.11; selected interpreter is 3.9.6.",
+      "action": "Install a matching Python version, recreate .venv, and recheck."
+    },
+    {
+      "status": "note",
+      "title": "No base dependency list",
+      "evidence": "No requirements.txt entries or static project dependencies found.",
+      "action": "Undeclared imports cannot be verified by this check."
+    },
+    {
+      "status": "note",
+      "title": "Configuration requirements unknown",
+      "evidence": "No example variable names or recognized os environment lookups found.",
+      "action": "Dynamic lookups and settings frameworks are not inspected."
+    },
+    {
+      "status": "note",
+      "title": "Static inspection scope",
+      "evidence": "Inspected 1 Python files using Python 3.9.6.",
+      "action": "No project code was executed during static checks. Passing checks do not prove the application runs."
+    }
+  ],
+  "verification": {
+    "command": "/usr/bin/python3 app.py",
+    "exit_code": 1,
+    "timed_out": false,
+    "output": "Traceback (most recent call last):\n  File \"[PROJECT]/app.py\", line 1, in <module>\n    import tomllib\nModuleNotFoundError: No module named 'tomllib'\n",
+    "output_truncated": false,
+    "result": "command failed"
+  }
+}

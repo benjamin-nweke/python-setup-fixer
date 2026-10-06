@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "project_id": "6ed8e6c0c64b824c4723e5f22f493fc05ec384851554f62ec28334c696ce004e",
+  "created_at": "2026-10-03T02:49:29.905239+00:00",
+  "project": "missing-package",
+  "interpreter": "[HOME]/Documents/Codex/2026-10-03/i-x20/work/repair-demo-env/bin/python",
+  "python": "3.12.14",
+  "findings": [
+    {
+      "status": "pass",
+      "title": "Python environment",
+      "evidence": "Python 3.12.14; interpreter [HOME]/Documents/Codex/2026-10-03/i-x20/work/repair-demo-env/bin/python",
+      "action": "Selected project environment."
+    },
+    {
+      "status": "note",
+      "title": "Python version not declared",
+      "evidence": "No supported Python version constraint found.",
+      "action": "Declare requires-python in pyproject.toml to make compatibility checkable."
+    },
+    {
+      "status": "pass",
+      "title": "Dependency: rich",
+      "evidence": "Installed 14.3.4 satisfies <15,>=13.",
+      "action": "Dependency is present. This does not test imports or native libraries."
+    },
+    {
+      "status": "note",
+      "title": "Configuration requirements unknown",
+      "evidence": "No example variable names or recognized os environment lookups found.",
+      "action": "Dynamic lookups and settings frameworks are not inspected."
+    },
+    {
+      "status": "note",
+      "title": "Static inspection scope",
+      "evidence": "Inspected 1 Python files using Python 3.9.6.",
+      "action": "No project code was executed during static checks. Passing checks do not prove the application runs."
+    }
+  ],
+  "verification": {
+    "command": "[HOME]/Documents/Codex/2026-10-03/i-x20/work/repair-demo-env/bin/python app.py",
+    "exit_code": 0,
+    "timed_out": false,
+    "output": "\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2503 Project                 \u2503 Status \u2503\n\u2521\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2547\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2529\n\u2502 Python Setup Fixer demo \u2502 Ready  \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n",
+    "output_truncated": false,
+    "result": "command succeeded"
+  },
+  "comparison": {
+    "baseline_time": "2026-10-03T02:48:48.674657+00:00",
+    "changes": [
+      {
+        "finding": "Dependency: rich",
+        "before": "fail",
+        "after": "pass",
+        "resolved": true
+      }
+    ],
+    "verification": {
+      "before": "command failed",
+      "after": "command succeeded"
+    }
+  }
+}

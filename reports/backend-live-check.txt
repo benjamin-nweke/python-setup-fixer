@@ -1,0 +1,48 @@
+# Python Setup Diagnosis
+
+## Problem Summary
+The application exited with code 1 due to a missing required configuration variable.
+
+## Evidence Analysis
+
+**What failed:**
+- Command: `[HOME]/Documents/Codex/2026-10-03/i-x20/work/prt-test-env/bin/python app.py`
+- Exit code: 1
+- Error message: "Missing required configuration: EXPENSE_DEMO_CSV. Set it to expenses.csv for the included fictional data."
+
+**What passed:**
+- Python 3.12.14 environment is available
+- Static inspection completed without import errors
+
+**What we know:**
+- `EXPENSE_DEMO_CSV` is accessed directly at app.py:10
+- The variable is declared in .env.example but not present in the runtime environment
+- The application explicitly checks for this variable and provides a suggested value
+
+## Configuration Status
+
+**EXPENSE_DEMO_CSV:** Not set in the process environment when the command ran.
+
+## Recommended Fix
+
+Set the configuration variable in the process environment before running the application:
+
+**Step 1:** Set the variable for your session:
+```bash
+export EXPENSE_DEMO_CSV=expenses.csv
+```
+
+**Step 2:** Rerun the original command:
+```bash
+[HOME]/Documents/Codex/2026-10-03/i-x20/work/prt-test-env/bin/python app.py
+```
+(Replace `[HOME]` with your actual home directory path)
+
+**Step 3:** Verify success by checking that the command exits with code 0 and produces expected output.
+
+## Important Notes
+
+- The .env.example file is documentation only; it does not automatically load variables
+- The application message suggests `expenses.csv` as the value, which appears to reference included sample data
+- A successful startup does not verify that all features work, only that the configuration check passed
+- Do not add the variable to shell history or configuration files if it will contain sensitive paths in production use

@@ -1,0 +1,8 @@
+{
+  "reviewer": "assistant",
+  "verdict": "needs correction",
+  "input_hash_verified": true,
+  "commands_executed_during_review": false,
+  "paid_features_tested": false,
+  "revised_prompt_live_tested": false
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "project_id": "8bcdea2537562c015892ccfe61f2dfff0aada7ee2905e5188d5c18991a09bb4c",
+  "created_at": "2026-10-03T02:46:07.562972+00:00",
+  "project": "missing-config",
+  "interpreter": "/Library/Developer/CommandLineTools/usr/bin/python3",
+  "python": "3.9.6",
+  "findings": [
+    {
+      "status": "note",
+      "title": "Python environment",
+      "evidence": "Python 3.9.6; interpreter /Library/Developer/CommandLineTools/usr/bin/python3",
+      "action": "No virtual environment selected. Create .venv or select one with --python."
+    },
+    {
+      "status": "note",
+      "title": "Python version not declared",
+      "evidence": "No supported Python version constraint found.",
+      "action": "Declare requires-python in pyproject.toml to make compatibility checkable."
+    },
+    {
+      "status": "note",
+      "title": "No base dependency list",
+      "evidence": "No requirements.txt entries or static project dependencies found.",
+      "action": "Undeclared imports cannot be verified by this check."
+    },
+    {
+      "status": "pass",
+      "title": "Configuration: FIXER_DEMO_ENDPOINT",
+      "evidence": "Declared in .env.example. direct lookup at app.py:4 Variable is set in the inherited environment.",
+      "action": "Value is not displayed or validated."
+    },
+    {
+      "status": "note",
+      "title": "Static inspection scope",
+      "evidence": "Inspected 1 Python files using Python 3.9.6.",
+      "action": "No project code was executed during static checks. Passing checks do not prove the application runs."
+    }
+  ],
+  "verification": {
+    "command": "python3 app.py",
+    "exit_code": 0,
+    "timed_out": false,
+    "output": "Demo started successfully. Configuration is present.\n",
+    "output_truncated": false,
+    "result": "command succeeded"
+  },
+  "comparison": {
+    "baseline_time": "2026-10-03T02:46:07.325220+00:00",
+    "changes": [
+      {
+        "finding": "Configuration: FIXER_DEMO_ENDPOINT",
+        "before": "fail",
+        "after": "pass",
+        "resolved": true
+      }
+    ],
+    "verification": {
+      "before": "command failed",
+      "after": "command succeeded"
+    }
+  }
+}

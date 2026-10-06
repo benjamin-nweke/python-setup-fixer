@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "project_id": "ca71692be4179b4e71093c75ccf20d8122adfbc5f7740d0442b6a092aed199d8",
+  "created_at": "2026-10-03T14:21:58.790862+00:00",
+  "project": "prompt-regression-test",
+  "interpreter": "[HOME]/Documents/Codex/2026-10-03/i-x20/work/prt-test-env/bin/python",
+  "python": "3.12.14",
+  "findings": [
+    {
+      "status": "pass",
+      "title": "Python environment",
+      "evidence": "Python 3.12.14; interpreter [HOME]/Documents/Codex/2026-10-03/i-x20/work/prt-test-env/bin/python",
+      "action": "Selected project environment."
+    },
+    {
+      "status": "note",
+      "title": "Python version not declared",
+      "evidence": "No supported Python version constraint found.",
+      "action": "Declare requires-python in pyproject.toml to make compatibility checkable."
+    },
+    {
+      "status": "pass",
+      "title": "Dependency: streamlit",
+      "evidence": "Installed 1.65.0 satisfies >=1.38.",
+      "action": "Dependency is present. This does not test imports or native libraries."
+    },
+    {
+      "status": "pass",
+      "title": "Dependency: anthropic",
+      "evidence": "Installed 1.11.0 satisfies >=0.34.",
+      "action": "Dependency is present. This does not test imports or native libraries."
+    },
+    {
+      "status": "note",
+      "title": "Configuration: ANTHROPIC_API_KEY",
+      "evidence": "optional lookup at app.py:84; optional lookup at llm_client.py:20 Not set in the inherited environment or local env files.",
+      "action": "Confirm whether this value is required. An example entry or optional lookup alone does not prove it is."
+    },
+    {
+      "status": "note",
+      "title": "Configuration: ANTHROPIC_JUDGE_MODEL",
+      "evidence": "optional lookup at llm_client.py:11 Not set in the inherited environment or local env files.",
+      "action": "Confirm whether this value is required. An example entry or optional lookup alone does not prove it is."
+    },
+    {
+      "status": "note",
+      "title": "Configuration: ANTHROPIC_MODEL",
+      "evidence": "optional lookup at llm_client.py:10 Not set in the inherited environment or local env files.",
+      "action": "Confirm whether this value is required. An example entry or optional lookup alone does not prove it is."
+    },
+    {
+      "status": "note",
+      "title": "Static inspection scope",
+      "evidence": "Inspected 5 Python files using Python 3.9.6.",
+      "action": "No project code was executed during static checks. Passing checks do not prove the application runs."
+    }
+  ],
+  "verification": {
+    "command": "[HOME]/Documents/Codex/2026-10-03/i-x20/work/prt-test-env/bin/python -c 'import streamlit, anthropic; import runner, assertions; print(\"Application imports succeeded\")'",
+    "exit_code": 0,
+    "timed_out": false,
+    "output": "Application imports succeeded\n",
+    "output_truncated": false,
+    "result": "command succeeded"
+  },
+  "comparison": {
+    "baseline_time": "2026-10-03T14:15:01.680813+00:00",
+    "changes": [
+      {
+        "finding": "Dependency: anthropic",
+        "before": "fail",
+        "after": "pass",
+        "resolved": true
+      },
+      {
+        "finding": "Dependency: streamlit",
+        "before": "fail",
+        "after": "pass",
+        "resolved": true
+      }
+    ],
+    "verification": {
+      "before": "command failed",
+      "after": "command succeeded"
+    }
+  }
+}

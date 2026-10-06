@@ -1,0 +1,8 @@
+{
+  "ui_load": "passed",
+  "default_cases": 6,
+  "missing_key_guard": "passed",
+  "run_without_key": "blocked as expected",
+  "network_attempts": 0,
+  "paid_evaluation": "not run"
+}
